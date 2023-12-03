@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Styles.scss";
 import Navbar from "../Navbar/Presentational";
 import Footer from "../footer/Presentational";
@@ -17,12 +13,12 @@ function AppIndex() {
     <div className="App">
       <Router>
         <Navbar />
-        <BrowserRouter>
-          <Route path="/" exact element={<Home />} />
+        <Switch>
+          <Route path="/" exact component={Home} />
           <Route path="/menu" exact component={Menu} />
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
-        </BrowserRouter>
+        </Switch>
         <Footer />
       </Router>
     </div>
